@@ -14,3 +14,7 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
         return df
     else:
         return pd.read_csv(path_calendar, index_col=0)
+    
+def save_calendar(df:pd.DataFrame, path_calendar:Path) -> None:
+    """ Save the dataframe to the calendar file"""
+    df.to_csv(path_calendar)
