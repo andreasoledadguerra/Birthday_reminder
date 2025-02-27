@@ -4,7 +4,7 @@ from pathlib import Path
 def create_empty_df() -> pd.DataFrame:
     """Create an empty dataframe with the proper columns"""
     columns = ["name", "birthday", "gift"]
-    return pd.Dataframe(columns=columns)
+    return pd.DataFrame(columns=columns)
 
 def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
     """Initialize or load the calendar file"""
@@ -24,10 +24,10 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     if column in df.columns and id_row in df["ID"].values:
         df.loc[df["ID"] == id_row, column] = new_value
         # Save modified file
-        df.to_csv(path_calendar, index= False)
+    
         print("Modification successful")
     else:
-        ("ID or column not founded")
+        print("ID or column not founded")
     return df
 
 def save_calendar(df:pd.DataFrame, path_calendar:Path) -> None:
