@@ -17,12 +17,11 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
 
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     #requesting data from the user
-    id_row = int(input("\Set the row ID to modify"))
     column = input("Enter the column name to modify")
     new_value = input("Enter the new value")
     #modifying the value
     if column in df.columns and id_row in df["ID"].values:
-        df.loc[df["ID"] == id_row, column] = new_value
+        df.loc[df["ID"] ==  column] = new_value
         # Save modified file
     
         print("Modification successful")
