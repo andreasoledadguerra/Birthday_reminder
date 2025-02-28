@@ -16,7 +16,7 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
         return pd.read_csv(path_calendar, index_col=0)
 
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
-#requesting data from the user
+    #requesting data from the user
     id_row = int(input("\Set the row ID to modify"))
     column = input("Enter the column name to modify")
     new_value = input("Enter the new value")
@@ -30,6 +30,10 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
         print("ID or column not founded")
     return df
 
+def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
+    """Remove all rows while preserving the Dataframe structure"""
+    return df.drop(df.index)
+
 def save_calendar(df:pd.DataFrame, path_calendar:Path) -> None:
     """ Save the dataframe to the calendar file"""
-    df.to_csv(path_calendar)
+    return df.to_csv(path_calendar)
