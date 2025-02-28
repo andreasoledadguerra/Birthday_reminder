@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from datetime import datetime, timedelta
-from tools.file_manager import initialize_calendar, edit_calendar, save_calendar
+from tools.file_manager import initialize_calendar, edit_calendar, clear_calendar, save_calendar
 
 def main():
     """Main entry point for the birthday reminder application"""
@@ -17,21 +17,22 @@ def main():
             print("Valor inválido")
 
         if option == 1:
-            is_option_ok =True
-            pass
+            is_option_ok = True
+            print(df.to_string())
+
 
         elif option == 2:
             is_option_ok = True
-            pass
+            edit_calendar(df, path_calendar)
 
         elif option == 3:
             is_option_ok = True
             edit_calendar(df, path_calendar)
-            pass
+           
 
         elif option == 4:
             is_option_ok = True
-            pass
+            clear_calendar(df, path_calendar)
         else:
             is_option_ok = False
 
