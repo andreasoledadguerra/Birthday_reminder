@@ -18,15 +18,16 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     #requesting data from the user
     column = input("Enter the column name to modify")
-    new_data = input("Enter the new value")
+    new_data = input("Enter the new data")
     #modifying the value
     if column in df.columns:
-        df.loc[df["ID"] ==  column] = new_data
-        # Save modified file
-    
-        print("Modification successful")
-    else:
-        print("ID or column not founded")
+        record_id = input("Enter the ID to modify ")
+        
+        if record_id in df["ID"].values:
+            df.loc[df["ID"] ==  record_id, column] = new_data
+            print("Modification successful")
+        else:
+            print("ID or column not found")
     return df
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
