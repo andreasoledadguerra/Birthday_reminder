@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 def add_row(df:pd.DataFrame, row: list) -> pd.DataFrame:
     """Add a new row to the calendar" dataframe"""
-
+    row = ["name", "birthday","gift"]
     df_new_row = pd.DataFrame([row], columns=df.columns)
     return pd.concat([df, df_new_row], ignore_index=True)
 
