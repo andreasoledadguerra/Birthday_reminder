@@ -24,7 +24,8 @@ def main():
 
         elif option == 2:
             is_option_ok = True
-            add_row(df, path_calendar)
+            row = ["name", "birthday", "gift"]
+            add_row(df, row)
 
         elif option == 3:
             is_option_ok = True
