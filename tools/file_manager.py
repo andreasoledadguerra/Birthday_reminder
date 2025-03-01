@@ -17,14 +17,14 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
 
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     #requesting data from the user
-    column = input("Enter the column name to modify")
+    col = ["name", "birthday", "gift"]
+    record_id = input("Enter the ID to modify ")
     new_data = input("Enter the new data")
     #modifying the value
-    if column in df.columns:
-        record_id = input("Enter the ID to modify ")
+    if col in df.columns:
         
         if record_id in df["ID"].values:
-            df.loc[df["ID"] ==  record_id, column] = new_data
+            df.loc[df["ID"] ==  record_id, col] = new_data
             print("Modification successful")
         else:
             print("ID or column not found")
