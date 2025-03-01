@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime, timedelta
 from tools.file_manager import initialize_calendar, edit_calendar, clear_calendar, save_calendar
+from tools.calendar_manager import add_row
 
 def main():
     """Main entry point for the birthday reminder application"""
@@ -23,7 +24,7 @@ def main():
 
         elif option == 2:
             is_option_ok = True
-            edit_calendar(df, path_calendar)
+            add_row(df, path_calendar)
 
         elif option == 3:
             is_option_ok = True
