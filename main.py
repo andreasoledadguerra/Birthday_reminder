@@ -24,8 +24,28 @@ def main():
 
         elif option == 2:
             is_option_ok = True
+
+            is_choice_ok = False
+            while not is_choice_ok:
+                choice = input("Elija una opción: 1. Editar nombre \n 2. Editar cumpleaños \n 3. Editar regalo \n 4. Repetir opciones")
+
+                if choice == 1:
+                    is_choice_ok = True
+                    name = input("Enter the name: ")
+                elif choice == 2:
+                    is_choice_ok = True
+                    birthday = input("Enter the birthday (YYY-MM-DD): ")
+
+                elif choice == 3:
+                    is_choice_ok = True
+                    gift = input("Enter the gift: ")
+                
+                else: 
+                     is_choice_ok = False
+
+
             row = ["name", "birthday", "gift"]
-            add_row(df, row)
+            df = add_row(df, row)
 
         elif option == 3:
             is_option_ok = True
