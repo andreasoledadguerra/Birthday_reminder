@@ -41,10 +41,10 @@ def main():
                     gift = input("Enter the gift: ")
                 
                 else: 
-                     is_choice_ok = False
+                     is_choice_ok = 4
 
 
-            row = ["name", "birthday", "gift"]
+            row = [name, birthday, gift]
             df = add_row(df, row)
 
         elif option == 3:
