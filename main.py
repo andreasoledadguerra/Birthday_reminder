@@ -32,7 +32,7 @@ def main():
             gift = ""
 
             while not is_choice_ok:
-                choice = input("Elija una opción: 1. Editar nombre \n 2. Editar cumpleaños \n 3. Editar regalo \n 4. Repetir opciones")
+                choice = input("Elija una opción: 1. Agregar nombre \n 2. Agregar cumpleaños \n 3. Agregar regalo \n 4. Repetir opciones")
                 choice = int(choice)
 
                 if choice == 1:
