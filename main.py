@@ -23,6 +23,7 @@ def main():
 
         elif option == 2:
             is_option_ok = True
+            row = [id, name, birthday, gift]
             id = ""
             name = " "
             birthday = " "
