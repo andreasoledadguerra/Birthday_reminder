@@ -11,7 +11,7 @@ def main():
 
     is_option_ok = False 
     while not is_option_ok: 
-        option = input("Choose an option: 1. View file  \n 2. Edit \n 3. Delete all data")
+        option = input("Choose an option:\n 1. View file  \n 2. Edit \n 3. Delete all data")
         try:
             option = int(option)
         except Exception as e:
@@ -28,7 +28,9 @@ def main():
             birthday = " "
             gift = "" 
             row = [id, name, birthday, gift]
+
             edit_calendar(df, path_calendar)
+            print(df.to_csv(path_calendar))
            
         elif option == 3:
             is_option_ok = True
@@ -39,6 +41,8 @@ def main():
         df = add_row(df, row)
 
     save_calendar(df, path_calendar)
+
+    #DESPUÉS DE EDITAR EL DATAFRAME, DEBERÍA MOSTRARSE EL DF ACTUALIZADO CON LOS CAMBIOS HECHOS POR EL USUARIO
 
 if __name__ == "__main__":
     main()
