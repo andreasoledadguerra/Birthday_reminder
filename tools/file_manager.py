@@ -55,7 +55,7 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     row = [id, name, birthday, gift]
 
     return df
-   
+ 
 #def view_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:  
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
@@ -63,6 +63,6 @@ def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     return df.drop(df.index)
 
 
-def save_calendar(df:pd.DataFrame, path_calendar:Path) -> None:
+def save_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     """ Save the dataframe to the calendar file"""
     return df.to_csv(path_calendar)
