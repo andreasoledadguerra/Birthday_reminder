@@ -29,26 +29,23 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
         id = input(f"Please, enter the ID or index you want to modify \n{df.to_string()}")
         
         choice = input("Choose the data you want to modify:\n 1. Name\n 2. Birthday\n 3. Gift\n 4. Repeat options")
-        try:
-            choice = int(choice)
-        except Exception as e:
-            print("Invalid value")
-
-        is_choice_ok = True
+        
+        choice = int(choice)
+    
 
         if choice == 1:
             name = input("Please, enter de new name: ")
-            name = df.loc[id, name]
+            name = str(df.loc[id, 'name'])
             is_choice_ok = True
                   
         elif choice == 2:
             birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
-            birthday = df.loc[id, birthday]
+            birthday = str(df.loc[id, 'birthday'])
             is_choice_ok = True
 
         elif choice == 3:
             gift = input("Please, enter the new gift: ")
-            gift = df.loc[id, gift]
+            gift = str(df.loc[id, 'gift'])
             is_choice_ok = True
         else: 
              choice == 4
