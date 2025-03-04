@@ -38,11 +38,14 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
         else: 
              is_choice_ok == 4
              continue
-    
+    return pd.read_csv(path_calendar, index_col=0)
+   
+#def view_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:  
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     """Remove all rows while preserving the Dataframe structure"""
     return df.drop(df.index)
+
 
 def save_calendar(df:pd.DataFrame, path_calendar:Path) -> None:
     """ Save the dataframe to the calendar file"""
