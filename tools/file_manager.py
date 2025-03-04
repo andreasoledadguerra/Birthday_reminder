@@ -24,32 +24,37 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     gift = ""
     while not is_choice_ok:
         #requesting data from the user
-        choice = input("Choose an option: 1. Choose row to edit \n 2. Add name \n 3. Add birthday \n 4. Add gift \n 5. Repeat options")
+        choice = input("Choose row to edit.")
         choice = int(choice)
+        print(df.to_string())
+        is_choice_ok =True
+
+        choice = input("Please, enter the ID you want to modify")
+        choice = int(choice)
+        is_choice_ok = True 
+        
+        choice = input("Choose the data you want to modify: 1. Name n\ 2. Birthday n\ 3. Gift n\ 4. Repeat options")
+        choice = int(choice)
+        is_choice_ok = True
 
         if choice == 1:
-            #Si el usuario elije editar una fila pre-existente, mejor mostrarle el dataframe
-            print(df.to_string())
-            id = input("Please, enter the ID you want to modify")
-            is_choice_ok = True
-
-        elif choice == 2:
             name = input("Please, enter de new name: ")
             is_choice_ok = True
                   
-        elif choice == 3:
+        elif choice == 2:
             birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
             is_choice_ok = True
 
-        elif choice == 4:
+        elif choice == 3:
             gift = input("Please, enter the new gift: ")
             is_choice_ok = True
         else: 
-             is_choice_ok == 5
+             is_choice_ok == 4
     
              continue
     
     row = [id, name, birthday, gift]
+
     
     return pd.read_csv(path_calendar, index_col=0)
    
