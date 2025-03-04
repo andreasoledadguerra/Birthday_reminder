@@ -22,8 +22,13 @@ def main():
             print(df.to_string())
 
 
+
         elif option == 2:
             is_option_ok = True
+            name = " "
+            birthday = " "
+            gift = "" 
+            row = [name, birthday, gift]
             edit_calendar(df, path_calendar)
             df = add_row(df, row)
            
