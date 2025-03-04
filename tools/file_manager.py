@@ -38,7 +38,7 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
         else: 
              is_choice_ok == 4
              continue
-    row = [name, birthday, gift]
+    
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     """Remove all rows while preserving the Dataframe structure"""
