@@ -22,19 +22,18 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     name = ""
     birthday = ""
     gift = ""
+    
     while not is_choice_ok:
         #requesting data from the user
-        choice = input("Choose row to edit.")
-        choice = int(choice)
-        print(df.to_string())
-        is_choice_ok =True
-
-        choice = input("Please, enter the ID you want to modify")
-        choice = int(choice)
-        is_choice_ok = True 
         
-        choice = input("Choose the data you want to modify: 1. Name n\ 2. Birthday n\ 3. Gift n\ 4. Repeat options")
-        choice = int(choice)
+        id = input(f"Please, enter the ID you want to modify \n{df.to_string()}")
+        
+        choice = input("Choose the data you want to modify:\n 1. Name\n 2. Birthday\n 3. Gift\n 4. Repeat options")
+        try:
+            choice = int(choice)
+        except Exception as e:
+            print("Invalid value")
+
         is_choice_ok = True
 
         if choice == 1:
@@ -55,8 +54,7 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     
     row = [id, name, birthday, gift]
 
-    
-    return pd.read_csv(path_calendar, index_col=0)
+    return df
    
 #def view_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:  
 
