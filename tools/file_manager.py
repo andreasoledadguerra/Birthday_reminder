@@ -16,19 +16,34 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
         return pd.read_csv(path_calendar, index_col=0)
 
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
-    #requesting data from the user
-    col = ["name", "birthday", "gift"]
-    record_id = input("Enter the column to modify: 'name', 'birthday', 'gift' ")
-    new_data = input("Enter the new data")
-    #modifying the value
-    if col in df.columns:
-        
-        if record_id in df["ID"].values:
-            df.loc[df["ID"] ==  record_id, col] = new_data
-            print("Modification successful")
-        else:
-            print("Column not found")
-    return df
+   
+            is_choice_ok = False
+            name = ""
+            birthday = ""
+            gift = ""
+
+            while not is_choice_ok:
+                #requesting data from the user
+                choice = input("Elija una opción: 1. Agregar nombre \n 2. Agregar cumpleaños \n 3. Agregar regalo \n 4. Repetir opciones")
+                choice = int(choice)
+
+                if choice == 1:
+                    name = input(f"Please, enter de new name: ")
+                    is_choice_ok = True
+                          
+                elif choice == 2:
+                    birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
+                    is_choice_ok = True
+
+                elif choice == 3:
+                    gift = input("Please, enter the new gift: ")
+                    is_choice_ok = True
+
+                else: 
+                     is_choice_ok == 4
+                     continue
+
+            row = [name, birthday, gift]
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     """Remove all rows while preserving the Dataframe structure"""
