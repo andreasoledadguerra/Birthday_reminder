@@ -11,11 +11,11 @@ def main():
 
     is_option_ok = False 
     while not is_option_ok: 
-        option = input("Elija alguna opción: 1. Ver archivo  \n 2. Agregar cumpleaños \n 3. Editar \n 4. Borrar")
+        option = input("Choose an option: 1. View file  \n 2. Edit \n 3. Delete all data")
         try:
             option = int(option)
         except Exception as e:
-            print("Valor inválido")
+            print("Invalid value")
 
         if option == 1:
             is_option_ok = True
@@ -24,39 +24,9 @@ def main():
 
         elif option == 2:
             is_option_ok = True
-            
-            
-            is_choice_ok = False
-            name = ""
-            birthday = ""
-            gift = ""
-
-            while not is_choice_ok:
-                choice = input("Elija una opción: 1. Agregar nombre \n 2. Agregar cumpleaños \n 3. Agregar regalo \n 4. Repetir opciones")
-                choice = int(choice)
-
-                if choice == 1:
-                    name = input(f"Please, enter de new name: ")
-                    is_choice_ok = True
-                          
-                elif choice == 2:
-                    birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
-                    is_choice_ok = True
-
-                elif choice == 3:
-                    gift = input("Please, enter the new gift: ")
-                    is_choice_ok = True
-
-                else: 
-                     is_choice_ok == 4
-                     continue
-
-            row = [name, birthday, gift]
-
-            
+            edit_calendar(df, path_calendar)
             df = add_row(df, row)
            
-
         elif option == 3:
             is_option_ok = True
             clear_calendar(df, path_calendar)
