@@ -18,7 +18,6 @@ def initialize_calendar(path_calendar: Path) -> pd.DataFrame:
 def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     """Edit or add new data on the calendar file"""
     is_choice_ok = False
-    row = [id, name, birthday, gift]
     id = ""
     name = ""
     birthday = ""
@@ -47,7 +46,11 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
             is_choice_ok = True
         else: 
              is_choice_ok == 5
+    
              continue
+    
+    row = [id, name, birthday, gift]
+    
     return pd.read_csv(path_calendar, index_col=0)
    
 #def view_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:  
