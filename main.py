@@ -52,14 +52,12 @@ def main():
                      continue
 
             row = [name, birthday, gift]
-            df = add_row(df, row)
 
-        elif option == 3:
-            is_option_ok = True
-            edit_calendar(df, path_calendar)
+            
+            df = add_row(df, row)
            
 
-        elif option == 4:
+        elif option == 3:
             is_option_ok = True
             clear_calendar(df, path_calendar)
         else:
