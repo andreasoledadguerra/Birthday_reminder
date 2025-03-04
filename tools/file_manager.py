@@ -23,7 +23,7 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     gift = ""
     while not is_choice_ok:
         #requesting data from the user
-        choice = input("Elija una opción: 1. Agregar nombre \n 2. Agregar cumpleaños \n 3. Agregar regalo \n 4. Repetir opciones")
+        choice = input("Choose an option: 1. Add name \n 2. Add birthday \n 3. Add gift \n 4. Repet options")
         choice = int(choice)
         if choice == 1:
             name = input(f"Please, enter de new name: ")
