@@ -23,10 +23,10 @@ def main():
 
         elif option == 2:
             is_option_ok = True
+            id = ""
             name = " "
             birthday = " "
             gift = "" 
-            row = [name, birthday, gift]
             edit_calendar(df, path_calendar)
            
         elif option == 3:
