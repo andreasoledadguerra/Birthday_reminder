@@ -33,7 +33,7 @@ def main():
             print(df.to_string())
                
         elif option == 3:
-            
+
             is_option_ok = True
             clear_calendar(df, path_calendar)
         else:
@@ -45,6 +45,6 @@ def main():
 
     #DESPUÉS DE EDITAR EL DATAFRAME, DEBERÍA MOSTRARSE EL DF ACTUALIZADO CON LOS CAMBIOS HECHOS POR EL USUARIO
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
+
 
