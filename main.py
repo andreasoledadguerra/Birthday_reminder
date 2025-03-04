@@ -21,8 +21,6 @@ def main():
             is_option_ok = True
             print(df.to_string())
 
-
-
         elif option == 2:
             is_option_ok = True
             name = " "
@@ -30,7 +28,6 @@ def main():
             gift = "" 
             row = [name, birthday, gift]
             edit_calendar(df, path_calendar)
-            df = add_row(df, row)
            
         elif option == 3:
             is_option_ok = True
@@ -38,8 +35,10 @@ def main():
         else:
             is_option_ok = False
 
+        df = add_row(df, row)
 
     save_calendar(df, path_calendar)
 
 if __name__ == "__main__":
     main()
+
