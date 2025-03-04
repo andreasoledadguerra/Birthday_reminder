@@ -38,24 +38,29 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
 
         if choice == 1:
             name = input("Please, enter de new name: ")
+            name = df.loc[df["ID"] == id, "name"]
             is_choice_ok = True
                   
         elif choice == 2:
             birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
+            birthday = df.loc[df["ID"] == id, "birthday"]
             is_choice_ok = True
 
         elif choice == 3:
             gift = input("Please, enter the new gift: ")
+            gift = df.loc[df["ID"]== id, "gift"]
             is_choice_ok = True
         else: 
-             is_choice_ok == 4
+             choice == 4
     
              continue
     
-    row = [id, name, birthday, gift]
+        row = [id, name, birthday, gift]
+
+    print(df.to_string())
 
     return df
- 
+
 #def view_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:  
 
 def clear_calendar(df:pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
