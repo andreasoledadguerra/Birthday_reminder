@@ -30,15 +30,16 @@ def main():
             row = [id, name, birthday, gift]
 
             edit_calendar(df, path_calendar)
-            print(df.to_csv(path_calendar))
-           
+            print(df.to_string())
+               
         elif option == 3:
+            
             is_option_ok = True
             clear_calendar(df, path_calendar)
         else:
             is_option_ok = False
 
-        df = add_row(df, row)
+        #df = add_row(df, row)
 
     save_calendar(df, path_calendar)
 
