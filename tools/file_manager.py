@@ -25,27 +25,27 @@ def edit_calendar(df: pd.DataFrame, path_calendar:Path) -> pd.DataFrame:
     
     while not is_choice_ok:
         #requesting data from the user
-        
+        id_num = int(id)
         id = input(f"Please, enter the ID or index you want to modify \n{df.to_string()}")
         
         choice = input("Choose the data you want to modify:\n 1. Name\n 2. Birthday\n 3. Gift\n 4. Repeat options")
         
-        choice = int(choice)
+        #choice = int(choice)
     
 
         if choice == 1:
             name = input("Please, enter de new name: ")
-            name = str(df.loc[id, 'name'])
+            df.iloc[id_num,df.columns.get_loc('name')] = name
             is_choice_ok = True
                   
         elif choice == 2:
             birthday = input("Please, enter the new birthday (YYY-MM-DD): ")
-            birthday = str(df.loc[id, 'birthday'])
+            df.iloc[id_num, df.columns.get_loc('birthday')] = birthday
             is_choice_ok = True
 
         elif choice == 3:
             gift = input("Please, enter the new gift: ")
-            gift = str(df.loc[id, 'gift'])
+            df.iloc[id_num, df.columns.get_loc('gift')] = gift
             is_choice_ok = True
         else: 
              choice == 4
